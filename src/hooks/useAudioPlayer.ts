@@ -2,8 +2,18 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Platform } from "react-native";
 import { Audio, AVPlaybackStatus } from "expo-av";
 import { AudioSource } from "../models";
+import { AppConfig } from "../config";
 
 function normalizeAudioUrl(url: string): string {
+  if (!url) return url;
+  if (
+    AppConfig.apiBaseUrl.startsWith("http") &&
+    !AppConfig.apiBaseUrl.includes("localhost") &&
+    !AppConfig.apiBaseUrl.includes("10.0.2.2")
+  ) {
+    const origin = AppConfig.apiBaseUrl.replace(/\/api\/v1\/?$/, "");
+    return url.replace(/^http:\/\/(localhost|127\.0\.0\.1|10\.0\.2\.2)(:\d+)?/, origin);
+  }
   if (Platform.OS === "android") {
     return url.replace(/http:\/\/(localhost|127\.0\.0\.1):(\d+)/g, "http://10.0.2.2:$2");
   }
