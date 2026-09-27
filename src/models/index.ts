@@ -65,6 +65,7 @@ export interface Story {
   audioKey?: string;
   audioUrl?: string;
   audioDurationSeconds?: number;
+  audioError?: string;
   ttsProvider?: string;
   createdAt: string;
 }
