@@ -22,8 +22,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0F172A"
       },
-      "permissions": ["RECORD_AUDIO"],
-      "usesCleartextTraffic": true
+      "permissions": ["RECORD_AUDIO"]
     },
     "plugins": [
       [
