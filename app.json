@@ -17,15 +17,18 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0F172A"
       },
-      "permissions": ["RECORD_AUDIO"]
+      "permissions": [
+        "RECORD_AUDIO"
+      ]
     },
     "plugins": [
       [
-        "expo-av",
+        "expo-audio",
         {
           "microphonePermission": "Allow Bedtime AI to access your microphone for parent voice cloning."
         }
-      ]
+      ],
+      "expo-asset"
     ]
   }
 }
