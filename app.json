@@ -28,7 +28,8 @@
           "microphonePermission": "Allow Bedtime AI to access your microphone for parent voice cloning."
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      "expo-font"
     ]
   }
 }
